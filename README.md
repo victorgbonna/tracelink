@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tracelink
+#### This is a line chart showing trends against timestamp, collecting the data from an API.
 
-## Getting Started
+## About The Project
+#### Frameworks, tools and libraries used 
+- React(Next Js) - Javascript frontend framework.
+- chart/ react chart js- frontend library for plotting charts.
 
-First, run the development server:
+### Getting started 
+#### To get a local copy up and running follow these simple example steps
+#### Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- Clone the repo
+- npm install
+- 
+### Map 
+###### This would entail every file/components and it's uses
+- Index.js- This contains every element except the container holding the chart plot.
+- component/lineChart.js- This holds the chart plot.
+- helper/chartArrayjs- This would convert the data gotten from an array in a way it can be parsed for plotting
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Special variable and functions used
+#### Variables
+- candles- holds the data gotten from the api endpoint with the request query. By default, it holds the data from http://139.59.76.169:4002/api/candles?instrument=NSE:SBIN&timeframe=15minute&from=2022-02-23&to=2022-03-04
+- instrument- holds the data gotten from the api endpoint with the request query. By default, it holds the first element in the array response
+- isSending- This should disable the fetch button when it is clicked, enables it after data has been gotten.
+- timeFrame, dateFrom, dateTo- holds the data for the request query.
+- filterList- holds all the list for the filter checkboxes.
+- showList- holds the filtered list to show on the graph
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+#### Functions
+- getServerSideprops- gets the candle and instrument data on the components initial rendering.
+- sendRequest- sends request to update the candle data and just re-render the chart js file without altering other components (using the callback hook). 
+- chartArray- creates 2 arrays from the candle api data, first one is an array to hold the timestamps values while the second one transposes the array of array for the filtered checkboxes.
+- transposeArray- transposes the array passed as an argument.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Contact 
+- Email- victorgbonna@gmail.com
+- Whatsapp - +234 8102603301
+- Linkedln - [https://www.linkedin.com/in/victor-ogbonna-5a3113230](https://www.linkedin.com/in/victor-ogbonna-5a3113230)
+-  Project Link: [https://github.com/victorgbonna/tracelink](https://github.com/victorgbonna/tracelink)
+-  Site Link: [https://homejamm.herokuapp.com/]([https://homejamm.herokuapp.com/])
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
