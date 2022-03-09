@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Head from 'next/head'
 import LineChart from '../components/lineChart'
 import {useState, useCallback } from 'react'
 
@@ -36,6 +37,10 @@ export default function Home({instruments, candlesdata}) {
   }
   return (
     <div style={{display:'flex', flexDirection:'column', alignItems:'center', paddingTop:'50px', margin:'10px', border:'2px solid black', fontSize:'14px', rowGap:'20px'}}>
+      <Head>
+        <title>Hello</title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+      </Head>
       <div style={{display:'flex',justifyContent:'space-between', columnGap:'20px'}}>
         <label htmlFor="inst">Instrument:
           <select defaultValue={instrument} onChange={(e)=>setInstrument(e.target.value)}>
