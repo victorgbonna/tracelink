@@ -17,7 +17,7 @@ export default function Home({instruments, candlesdata}) {
     if (isSending) return
     setIsSending(true)
     // console.log({instrument,timeframe,dateTo,dateFrom})
-    const res = await axios(`https://139.59.76.169:4002/api/candles?instrument=${instrument}&timeframe=${timeFrame}&from=${dateFrom}&to=${dateTo}`)
+    const res = await axios(`http://139.59.76.169:4002/api/candles?instrument=${instrument}&timeframe=${timeFrame}&from=${dateFrom}&to=${dateTo}`)
     const candlesdata= res.data.data
     setCandles(candlesdata)
 
