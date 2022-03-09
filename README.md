@@ -1,4 +1,4 @@
-# HomeJamTask
+# Tracelink
 #### This is a line chart showing trends against timestamp, collecting the data from an API.
 
 ## About The Project
